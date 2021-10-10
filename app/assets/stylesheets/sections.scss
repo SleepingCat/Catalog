@@ -1,0 +1,27 @@
+// Place all the styles related to the Sections controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.section, .book {
+	float:  left;
+	margin-right: 50px;
+	table {
+		border: 1px solid black;
+		margin-top: 10px;
+		tr{
+			td{
+				border: 1px solid black;
+			}
+		}
+	}
+}
+.section-link-1 {
+	font-size: 14px;
+	font-weight: bold;
+}
+.section-link-2 {
+	margin-left: 15px;
+	font-size: 14px;
+}
+.section-link-3 {
+	margin-left: 30px;
+}

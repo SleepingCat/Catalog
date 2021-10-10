@@ -1,0 +1,36 @@
+<%= javascript_pack_tag 'section_event_handler' %>
+
+<!-- Master -->
+<p id="notice"><%= notice %></p>
+<div class="section">
+<h1>Sections</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Parent id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tree.each do |key, s| 
+	section = s['section']
+	offset = s['offset']%>
+      <tr>
+        <td><%= link_to section.Name, '/books', remote: true, :data => {:params => "id="+section.id.to_s}, class: 'section-link-'+offset.to_s %></td>
+        <td><%= section.Parent_ID %></td>
+        <td><%= link_to 'Show', section %></td>
+        <td><%= link_to 'Edit', edit_section_path(section) %></td>
+        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Section', new_section_path %>
+</div>
+
+<!-- Detail -->
+<div class="book" id="detail">
+<%= render 'books/bookpart' %>
+</div>
